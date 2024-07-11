@@ -1,0 +1,121 @@
+<% layout("/layouts/boilerplate") %>
+
+<style>
+  body {
+    border: 5px solid black;
+    width: 900px;
+    height: 750px;
+    margin: auto;
+  }
+
+  #login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+    background-color: #fffff7;
+    opacity: 0.8;
+    width: 48%;
+    z-index: -1;
+    margin-left: 26%;
+    border-radius: 8px;
+  }
+
+  .notes-head {
+    margin-top: -1vw;
+  }
+  .notes-details {
+    text-align: center;
+    font-size: 2vw;
+  }
+  .notes-form {
+    margin: 1vw 2vw;
+    line-height: 2vw;
+  }
+
+  .btn {
+    background-color: #03c04a;
+    width: 20vw;
+    height: 4vw;
+    font-size: 2vw;
+    color: #fffff7;
+    margin: 2vw 4vw;
+    border: 4px;
+    border-radius: 4px;
+  }
+  .btn:hover {
+    opacity: 0.9;
+  }
+
+  .data {
+    margin-top: 3vw;
+    margin-left: 6%;
+  }
+  .data input {
+    width: 24vw;
+    height: 7vh;
+    border-radius: 25px;
+  }
+  .data label {
+    font-weight: bold;
+  }
+
+  .details {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  @media (max-width: 800px) {
+    .notes-head {
+      font-size: 25px;
+      margin-top: 1vw;
+    }
+  }
+</style>
+
+<body>
+  <div id="login">
+    <div class="login-detail">
+      <h1 class="notes-head">Signup</h1>
+    </div>
+    <div class="notes-form">
+      <form action="/signup" method="POST" class="needs-validation" novalidate>
+        <div class="data">
+          <label for="username" class="form-label">Username</label>
+          <input
+            name="username"
+            id="username"
+            type="text"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="data">
+          <label for="email" class="form-label">Email</label><br />
+          <input
+            name="email"
+            id="email"
+            type="email"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="data">
+          <label for="password" class="form-label">Password</label>
+          <input
+            name="password"
+            id="password"
+            type="password"
+            class="form-control"
+            required
+          />
+        </div>
+        <button class="btn">Signup</button>
+        <p class="details">
+          Already have an account?<a href="/login"> Login</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</body>

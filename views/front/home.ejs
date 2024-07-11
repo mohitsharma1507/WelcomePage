@@ -1,0 +1,49 @@
+<% layout("/layouts/boilerplate") %>
+
+<style>
+  .container {
+    background-color: rgb(209, 146, 209);
+    margin: auto;
+    padding: 0px;
+    width: 550px;
+    height: 450px;
+    margin-top: 6%;
+    border-radius: 34px;
+  }
+  .btn {
+    background-color: #03c04a;
+    font-size: 2vw;
+    color: #fffff7;
+    margin: 6% 5% 0 13.5%;
+    border: 4px;
+    border-radius: 4px;
+  }
+  .btn:hover {
+    opacity: 0.9;
+  }
+  img {
+    width: 22vw;
+    height: 36vh;
+    margin-top: 30px;
+    margin-left: 17%;
+    border-radius: 50%;
+  }
+</style>
+<body>
+  <div class="container">
+    <img src="./assests/photo.jpg" alt="" />
+    <hr />
+    <% if(!currUser) { %>
+    <button class="btn">
+      <a class="nav-link" href="/login"><b>Log in</b></a>
+    </button>
+    <button class="btn">
+      <a class="nav-link" href="/signup"><b>Signup</b></a>
+    </button>
+    <%}%> <% if(currUser) { %>
+    <button class="btn">
+      <a class="nav-link" href="/logout"><b>log out</b></a>
+    </button>
+    <%}%>
+  </div>
+</body>

@@ -1,0 +1,108 @@
+<% layout("/layouts/boilerplate") %>
+
+<style>
+  #login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7vh;
+    background-color: #fffff7;
+    opacity: 0.8;
+    width: 48%;
+    z-index: -1;
+    margin-left: 26%;
+    border-radius: 8px;
+  }
+
+  .notes-head {
+    margin-top: 1vw;
+    margin-left: -8px;
+  }
+  .notes-details {
+    text-align: center;
+    font-size: 2vw;
+  }
+  .notes-form {
+    margin: 1vw 2vw;
+    line-height: 2vw;
+  }
+
+  .btn {
+    background-color: #03c04a;
+    width: 20vw;
+    height: 4vw;
+    font-size: 2vw;
+    color: #fffff7;
+    margin: 2vw 4vw;
+    border: 4px;
+    border-radius: 4px;
+  }
+  .btn:hover {
+    opacity: 0.9;
+  }
+
+  .data {
+    margin-top: 3vw;
+    margin-left: 6%;
+  }
+  .data input {
+    width: 24vw;
+    height: 7vh;
+    border-radius: 25px;
+  }
+  .data label {
+    font-weight: bold;
+  }
+
+  .details {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  @media (max-width: 800px) {
+    .notes-head {
+      font-size: 25px;
+      margin-top: 1vw;
+    }
+  }
+</style>
+
+<body>
+  <div id="login">
+    <div class="login-detail">
+      <h1 class="notes-head">Welcome to SearchArea</h1>
+      <p class="notes-details">Enter your credential to login</p>
+    </div>
+    <div class="notes-form">
+      <form action="/login" method="POST" class="needs-validation" novalidate>
+        <div class="data">
+          <label for="username" class="form-label">Username</label>
+          <input
+            name="username"
+            id="username"
+            type="text"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="data">
+          <label for="password" class="form-label">Password</label>
+          <input
+            name="password"
+            id="password"
+            type="password"
+            class="form-control"
+            required
+          />
+        </div>
+        <button class="btn">Login</button>
+        <p class="details">
+          Don't have an account?<a href="/signup"> Signup</a>
+          <br />
+          forgot password?<a href="/forgot-password">Click Here</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</body>
